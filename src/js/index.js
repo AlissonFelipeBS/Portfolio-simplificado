@@ -5,11 +5,15 @@
 */
 
 const botaoMostrarProjetos = document.querySelector('.btn-mostrar-projetos');
-const projetosInativos = document.querySelectorAll('.projeto:not(.ativo)')
-const logoAtualizarPagina = document.querySelector('.logo')
+const projetosInativos = document.querySelectorAll('.projeto:not(.ativo)');
+const logoAtualizarPagina = document.querySelector('.logo');
 
-// Recurso - Ao clicar no logo da página irá atualizar
-logoAtualizarPagina();
+//Recurso - Atualiza a página ao clicar no logo
+logoAtualizarPagina.addEventListener('click', () => {
+
+        location.reload();
+
+    });
 
 //Passo 2 - identificar o clique no botão
 botaoMostrarProjetos.addEventListener('click', () => {
@@ -22,22 +26,14 @@ botaoMostrarProjetos.addEventListener('click', () => {
     Passo 1 - pegar o botão e esconder ele
     */
     esconderBotao();
-});
-
-function logoAtualizarPagina() {
-    logoAtualizarPagina.addEventListener('click', () => {
-
-        location.reload();
-
     });
-}
 
 function esconderBotao() {
     botaoMostrarProjetos.classList.add('remover');
-}
+};
 
 function mostrarMaisProjetos() {
     projetosInativos.forEach(projetoInativo => {
         projetoInativo.classList.add('ativo');
     });
-}
+};
